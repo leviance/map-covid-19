@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap");
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(24, 167, 60); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.767); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(253, 3, 3); 
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: white;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  li{
+    list-style: none;
+  }
+}
+
+#root{
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .big-col-left{
+    width: 20%;
+    .total-patients{
+      background-color: #343332;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      font-weight: 600;
+      border: 1px solid gray;
+      span{
+        color: red;
+        font-size: 40px;
+        font-weight: 600;
+      }
+    }
+
+    .total-patients-each-country {
+      margin-top: 15px;
+      background-color: #343332;
+      height: 100%;
+      color: white;
+      font-size: 18px;
+      overflow-y: scroll;
+      border: 1px solid gray;
+      
+      .title{margin-bottom: 15px; text-align:  center; font-weight: 600; padding-top: 10px;}
+      ul{
+        height: auto;
+        padding-bottom: 50px;
+        li{
+          padding: 5px 10px;
+          border-top: 1px solid rgb(167, 166, 166);
+          span{
+            padding-right: 10px;
+            color: red;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .App{
+    width: 54%;
+    border: 1px solid gray;
+  }
+  .big-col-right{
+    width: 24.6%;
+    
+    .top-component{
+      height: 400px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .column-data{
+        width: 48.5%;
+        color: white;
+        background-color: #343332;
+        border: 1px solid gray;
+        padding-bottom: 5px;
+        position: relative;
+
+        .title{
+          padding-top: 10px;
+          font-size: 16px;
+          font-weight: 600;
+          height: 18%;
+          text-align: center;
+          p{font-size: 25px;}
+        }
+        .title-recovered{
+          p{color: rgba(37, 214, 111, 0.952); }
+        }
+        .title-deaths{
+          p{color: red; }
+        }
+        .content{
+          width: 100%;
+          height: 80%;
+          overflow-y: scroll;
+          ul{
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+            li{
+              padding: 5px 10px;
+              border-bottom: 1px solid #a7a6a662;
+              font-size: 15px;
+              span.color-red{color: red; padding-right: 5px}
+              span.color-blue{color: rgba(37, 214, 111, 0.952); padding-right: 5px}
+            }
+          }
+        }
+        .btn-group{
+          position: absolute;
+          bottom: -40px;
+          left: 0;
+          border: 1px solid gray;
+          width: 100%;
+          height: 35px;
+          font-size: 11px;
+          background-color: #343332;
+          cursor: pointer;
+          >div{text-align: center; padding: 2px;}
+          .btn-view{
+            border-right: 1px solid gray;
+          }
+          .active{
+            background-color: rgb(24, 167, 60);
+          }
+        }
+      }
+     
+    }
+
+    .bottom-component{
+      width: 100%;
+      margin-top: 50px;
+      height: 42%;
+      background-color: #343332;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .infor-of-vietnam{
+        color: white;
+        width: auto;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        h1{padding-bottom: 20px; font-weight: 800; color: red;}
+        span{color:rgb(24, 167, 60) ;}
+        .color-red{color: red;}
+        h3{font-weight: 500;}
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .App{
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 990px){
+  #root{
+    display: block !important;
+    .big-col-left{
+      width: 100% !important;
+      height: 321px !important;
+      .total-patients-each-country{height: 220px !important;}
+    }
+    .big-col-right{
+      width: 100% !important;
+    }
+    .App{
+      margin-top: 20px;
+      width: 100% !important;
+      height: 321px !important;
+    }
+  }
+}
+
+.App,
+.mapContainer,
+.mapBox {
+  width: 100%;
+  height: 100%;
+  canvas{
+    width: 100% !important;
+  }
+}
+
+.mapboxgl-popup {
+  font-family: "Baloo Thambi 2", cursive;
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  color: #424242;
+}
+
+.mapboxgl-popup-content {
+  padding: 1rem;
+  margin: 0;
+
+  > * {
+    margin: 0 0 0.5rem;
+    padding: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    border-bottom: 1px solid rgba(black, 0.2);
+
+    b {
+      font-size: 1.6rem;
+      color: #212121;
+      padding: 0 5px;
+    }
+  }
+
+  img {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+  }
+}
