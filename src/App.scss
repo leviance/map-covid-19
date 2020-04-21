@@ -196,8 +196,47 @@ ul{
 }
 
 @media (max-width: 990px){
+  /* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1; 
+}
   #root{
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: rgb(24, 167, 60); 
+    }
+     
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 0, 0, 0.767); 
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(253, 3, 3); 
+    }
     display: block !important;
+    overflow-y: scroll;
     .big-col-left{
       width: 100% !important;
       height: 321px !important;
@@ -205,6 +244,7 @@ ul{
     }
     .big-col-right{
       width: 100% !important;
+      margin-top: 30px;
     }
     .App{
       margin-top: 20px;
